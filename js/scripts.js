@@ -2,81 +2,82 @@ let num_cards_GLOBAL = 5;
 
 let cards = [
     {
-        background:
-            "//external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmoviefail.com%2Fwp-content%2Fuploads%2F2014%2F11%2Finterstellar1.jpeg&f=1&nofb=1",
-        display_background:
-            "//external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fhdqwalls.com%2Fdownload%2Finterstellar-gargantua-u4-1920x1080.jpg&f=1&nofb=1",
-        title: "Interstellar",
+        background: "assets/top_hero.png",
+        title: "Float Like A Butterfly, Bite Like A Snake",
         description:
-            "Watch this incredible film made by some incredible people!"
+            "Experience the intense neo-noir thriller from debut filmmaker Jordan Peace, where betrayal and redemption collide in a high-stakes showdown between old friends turned foes",
+        duration: "2hr"
     },
     {
-        background: "https://images.alphacoders.com/586/thumb-1920-586902.jpg",
-        display_background:
-            "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages2.alphacoders.com%2F845%2F84502.jpg&f=1&nofb=1",
-        title: "Inception",
+        background: "assets/carousel_1.jpeg",
+        title: "Recall 126",
         description:
-            "Watch this incredible film made by some incredible people!"
+            "After killing the original that made him, a newly free clone must fight for his life against an all-powerful billionaire that destroys everything in his path.",
+        duration: "1hr 35min"
     },
     {
         background:
-            "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.wallpapersafari.com%2F41%2F1%2Fhj197K.jpg&f=1&nofb=1",
-        display_background:
-            "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages7.alphacoders.com%2F990%2F990610.jpg&f=1&nofb=1",
-        title: "Avengers: Endgame",
+            "assets/carousel_7.png",
+        title: "You Said You Loved Me",
         description:
-            "Watch this incredible film made by some incredible people!"
+            "'You Said You Loved Me' explores how social media is affecting our relationship with people, especially with our loved ones. In a relationship, shouldn't we keep the sweet and unforgettable memories to ourselves.. Rather than sharing it with others? ",
+        duration: "1hr 10min"
     },
     {
         background:
-            "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.wallpapersden.com%2Fimage%2Fdownload%2Fjoker-2019-movie_66632_1920x1080.jpg&f=1&nofb=1",
-        display_background:
-            "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.wallpapersden.com%2Fimage%2Fdownload%2Fjoker-stair-dance_68124_1920x1080.jpg&f=1&nofb=1",
-        title: "Joker",
+            "assets/carousel_2.jpg",
+        title: "Mom",
         description:
-            "Watch this incredible film made by some incredible people!"
+            "A son comes home from a funeral, but not everything is as it seems",
+        duration: "1hr 15min"
     },
     {
         background:
-            "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.U2iFUz9mivZeH-h48O5wtwHaEK%26pid%3DApi&f=1",
-        title: "1917",
+            "assets/carousel_3.jpg",
+        title: "I Am Here",
         description:
-            "Watch this incredible film made by some incredible people!"
+            "A man moves into a new home & ends up in a texting relationship and obsession with the last tenant. ",
+        duration: "1hr 55min"
     },
     {
         background:
-            "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapershome.com%2Fimages%2Fpages%2Fpic_h%2F22685.jpg&f=1&nofb=1",
-        title: "TENET",
+            "assets/carousel_5.jpg",
+        title: "The Punisher: Nightmare",
         description:
-            "Watch this incredible film made by some incredible people!"
+            "A thrilling fan film based on Marvel Comics' The Punisher. ",
+        duration: "2hr 45min"
     },
     {
         background:
-            "//external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.hdwallpapers.in%2Fdownload%2Fskyfall_2012_movie-1920x1080.jpg&f=1&nofb=1",
-        title: "Skyfall",
+            "assets/carousel_6.jpg",
+        title: "The Big Pelvis",
         description:
-            "Watch this incredible film made by some incredible people!"
+            "The Big Pelvis only comes out once a month. The three fishermen set out to catch it before their rival does.",
+        duration: "45min"
     },
     {
         background:
-            "//external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fgetwallpapers.com%2Fwallpaper%2Ffull%2F9%2F6%2F8%2F126147.jpg&f=1&nofb=1",
-        title: "Star Wars: A New Hope",
+            "assets/carousel_4.png",
+        title: "Coming to Get You",
         description:
-            "Watch this incredible film made by some incredible people!"
+            "First Short Film - Her boyfriend is coming to get her!",
+        duration: "1hr"
     },
     {
         background:
-            "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FrPpxrz8o0svAPCLucjsEdMXoDfX.jpg&f=1&nofb=1",
-        title: "Venom",
+            "assets/carousel_8.jpg",
+        title: "PORG",
         description:
-            "Watch this incredible film made by some incredible people!"
+            "In the new Star Wars movie, there were little creatures called Porgs... some people hated them and some people loved them... I happen to live with one.",
+        duration: "1hr 35min"
     },
     {
         background:
-            "//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapertag.com%2Fwallpaper%2Ffull%2F2%2F6%2F8%2F123320-lord-of-the-rings-background-1920x1080-picture.jpg&f=1&nofb=1",
-        title: "Lord of the Rings",
+            "assets/carousel_9.png",
+        title: "The Coffee Machine",
         description:
-            "Watch this incredible film made by some incredible people!"
+            "My final major project at College, based on a story from the SCP website.",
+        duration: "1hr 10min"
     }
 ];
 
@@ -267,7 +268,8 @@ const AddCards = () => {
             let title = document.createElement("h4");
             title.innerText = chosen_card.title;
             let description = document.createElement("p");
-            description.innerText = "1h 25m";
+            description.innerText = chosen_card.duration;
+            // the addition of chosen_card.duration allowed me to customise each card's duration label - Nixon
 
             let button_container = document.createElement("div");
             button_container.classList.add("button-container");
