@@ -1,16 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 :root {
-    --blue: rgba(35, 73, 189, 1);
-    --blue-selected: rgba(30, 73, 210, 0.8);
+    --blue: rgba(1, 81, 140, 1);
+    --blue-selected: rgba(1, 81, 120, 0.8);
     --grey: rgba(104, 104, 104, 1);
     --grey-selected: rgb(162, 159, 159);
     --red: rgba(212, 44, 44, 1);
     --red-selected: rgba(170, 35, 35, 0.9);
     --card-scale: 5;
 }
-
+/* The shade of blue is in-line with the school's logo - Nixon */
 html,
 body {
     margin: 0;
@@ -141,9 +142,10 @@ a {
 }
 
 .main-nav .button-container h2 {
-    font-family: "Roboto", sans-serif;
-    font-size: 26px;
+    font-family: "Lato";
+    font-size: 18px;
     color: white;
+    font-weight: 700;
 }
 
 .header .right-nav {
@@ -162,17 +164,26 @@ a {
 }
 
 .login {
-    background-color: var(--red);
+    background-color: var(--blue);
 }
 
 .login:hover {
-    background-color: var(--red-selected);
+    background-color: var(--blue-selected);
     cursor: pointer;
 }
 
+.search:hover {
+    cursor: pointer;
+}
+/* Added a hover state for the search icon to maintain consistency with the other buttons - Nixon */
 .right-nav .button-container h2 {
     font-family: "Roboto", sans-serif;
-    font-size: 20px;
+    font-size: 18px;
+    color: white;
+}
+
+.right-nav .button-container.search i {
+    font-size: 18px;
     color: white;
 }
 
@@ -204,11 +215,12 @@ a {
     min-height: 250px;
     display: flex;
     align-items: center;
-    background-image: url("//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhdwallpaperim.com%2Fwp-content%2Fuploads%2F2017%2F08%2F24%2F107270-Interstellar_movie.jpg&f=1&nofb=1");
+    background-image: url('../assets/top_hero.png');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
-
+/* Included a background-position:center to ensure hero image is centered even during resizing of screen size - Nixon */
 .top .image-container {
     width: 100%;
     height: 100%;
@@ -869,11 +881,11 @@ a {
 
 @media screen and (max-width: 1230px) {
     .main-nav .button-container h2 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .right-nav .button-container h2 {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .carousel-btn svg {
@@ -974,7 +986,7 @@ a {
     }
 
     .right-nav .button-container h2 {
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .main-nav {
