@@ -1,5 +1,9 @@
 let num_cards_GLOBAL = 5;
 
+// video resources
+
+
+
 let cards = [
     {
         background: "assets/top_hero.png",

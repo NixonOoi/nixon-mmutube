@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&family=Lato&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
+
 :root {
     --blue: rgba(1, 81, 140, 1);
     --blue-selected: rgba(1, 81, 110, 1);
@@ -39,6 +40,7 @@ a {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    background-color: #141414;
 }
 
 .red {
@@ -48,6 +50,7 @@ a {
 .white {
     color: rgba(230, 230, 230, 1);
 }
+
 
 /* HEADER */
 .header {
@@ -140,6 +143,17 @@ a {
     transition: border-bottom-color 0.3s;
 }
 
+.main-nav .nav-link-active {
+    height: calc(100% - 10px);
+    margin-top: 5px;
+    padding: 0px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 5px solid red;
+    border-bottom-color: red;
+}
+
 .main-nav .button-container h2 {
     font-family: "Lato";
     font-size: 18px;
@@ -208,6 +222,144 @@ a {
 
 /* END HEADER */
 
+/* TOP CATEGORIES PAGE */
+
+.container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container img {
+    width: 150px; /* Adjust the width as needed */
+    height: auto;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.text-content {
+    max-width: 600px;
+}
+
+.text-content h2 {
+    margin-top: 0;
+}
+
+.text-content p {
+    margin: 0;
+}
+
+.top-video{
+    display: flex;
+    background-color: #141414;
+    padding: 120px 40px 40px 40px;   
+}
+
+.top-video-content-area {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    flex: 4;
+}
+
+.top-video-content-title {
+    font-family: "Lato";
+    font-style: inherit;
+    font-weight: 500;
+    color: white;
+    font-size: 35px;
+    letter-spacing: 5px;
+    padding-left: 40px;
+}
+
+.suggested-videos {
+    flex: 1;
+    margin-left: 40px;
+}
+
+
+.suggested-videos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.suggested-videos li {
+    background: transparent;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.suggested-videos img {
+    width: 252px;
+    height: 141px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 2px solid transparent; /* Initial border color */
+    transition: border-color 0.3s ease; /* Smooth transition */
+}
+
+.suggested-videos img:hover {
+    border-color: white; /* Change border color on hover */
+}
+
+.suggested-videos p {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.suggested-videos h2 {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+}
+
+.container-fluid {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+  }
+  
+  .ratio {
+    position: relative;
+    width: 100%;
+  }
+  .ratio::before {
+    display: block;
+    padding-top: var(--bs-aspect-ratio);
+    content: "";
+  }
+  .ratio > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .ratio-1x1 {
+    --bs-aspect-ratio: 100%;
+  }
+  
+  .ratio-4x3 {
+    --bs-aspect-ratio: 75%;
+  }
+  
+  .ratio-16x9 {
+    --bs-aspect-ratio: 56.25%;
+  }
+  
+  .ratio-21x9 {
+    --bs-aspect-ratio: 42.8571428571%;
+  }
+
 /* TOP SECTION */
 .top {
     width: 100%;
@@ -220,16 +372,7 @@ a {
     background-position: center;
 }
 /* Included a background-position:center to ensure hero image is centered even during resizing of screen size - Nixon */
-.top .image-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    background: rgb(20, 20, 20);
-    background: linear-gradient(0deg,
-            rgba(20, 20, 20, 1) 0%,
-            rgba(255, 255, 255, 0) 36%);
-}
+
 
 @-webkit-keyframes fadeIn {
     0% {
@@ -282,7 +425,7 @@ a {
 }
 
 .top .left-side {
-    width: 50%;
+    width: 60%;
     height: 80%;
     padding-left: 5%;
     display: flex;
@@ -451,6 +594,7 @@ a {
     transform: scale(1.3);
     transition: transform 0.5s;
     z-index: 1;
+    border-color: white
 }
 
 .movie-desc {
@@ -711,14 +855,14 @@ a {
     width: 100%;
     display: flex;
     flex-direction: column;
-    min-height: 100px;
+    min-height: 300px;
     background-color: #141414;
     justify-content: center;
     align-items: center;
 }
 
 .bottom .btn-row {
-    width: 50%;
+    width: 75%;
     margin: 15px 0px;
     display: flex;
     align-items: center;
@@ -858,7 +1002,7 @@ a {
 
 @media screen and (max-width: 1330px) {
     .top h1 {
-        font-size: 80px;
+        font-size: 60px;
     }
 
     .top p {
@@ -946,7 +1090,7 @@ a {
 
 @media screen and (max-width: 1045px) {
     .top h1 {
-        font-size: 65px;
+        font-size: 55px;
     }
 
     .top p {
