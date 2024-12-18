@@ -1,6 +1,80 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&family=Lato&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
+/* Specifics for the login pop-up - Nixon */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 2;
+    width: 90%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+button svg {
+    margin-right: 8px;
+}
+
+
+.apple-btn {
+    background-color: black;
+    color: white;
+}
+
+.apple-btn:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+.google-btn {
+    background-color: #4285F4;
+    color: white;
+}
+
+.google-btn:hover {
+    background-color: #357ae8;
+    transform: scale(1.05);
+}
+
+.alternative-logins {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .popup {
+        width: 90%;
+        padding: 15px;
+    }
+
+    button {
+        padding: 8px;
+    }
+}
+
+body hr {
+    border: none; /* Remove default border */
+    height: 5px; /* Set the thickness */
+    background-color: red; /* Set the color */
+}
 
 :root {
     --blue: rgba(1, 81, 140, 1);
@@ -223,7 +297,6 @@ a {
 /* END HEADER */
 
 /* TOP CATEGORIES PAGE */
-
 .container {
     display: flex;
     align-items: center;
@@ -252,18 +325,77 @@ a {
     margin: 0;
 }
 
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+#likeBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#dislikeBtn {
+    background-color: #f44336;
+    color: white;
+}
+
+#shareBtn {
+    background-color: #008CBA;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.comments {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: "Lato";
+    font-style: inherit;
+    font-weight: 500;
+    color: white; 
+    letter-spacing: 1px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
 .top-video{
     display: flex;
+    flex-wrap: wrap;
     background-color: #141414;
-    padding: 120px 40px 40px 40px;   
+    padding: 120px 40px 40px 40px;
 }
 
 .top-video-content-area {
-    width: 70%;
+    border-radius: 5px;
+    flex: content;
+}
+
+.video-info {
     display: flex;
     flex-direction: column;
-    margin-bottom: 40px;
-    flex: 4;
+    margin-bottom: 0.5em;
+}
+
+textarea {
+    width: 100%;  /* Make the textarea cover the width of its container */
+    height: 100%; /* Fixed heig ht */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    resize: none;  /* Prevents resizing */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
 }
 
 .top-video-content-title {
@@ -271,13 +403,15 @@ a {
     font-style: inherit;
     font-weight: 500;
     color: white;
-    font-size: 35px;
-    letter-spacing: 5px;
-    padding-left: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 }
+/* Added a flex-wrap to ensure the items will fit when screen are resized - Nixon  */
 
 .suggested-videos {
-    flex: 1;
     margin-left: 40px;
 }
 
@@ -298,7 +432,6 @@ a {
     width: 252px;
     height: 141px;
     margin-right: 10px;
-    border-radius: 5px;
     border: 2px solid transparent; /* Initial border color */
     transition: border-color 0.3s ease; /* Smooth transition */
 }
@@ -324,7 +457,7 @@ a {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   .ratio {
@@ -451,6 +584,7 @@ a {
     text-shadow: 1px 1px 2px black;
     padding: 25px 0px;
 }
+
 
 .top h3 {
     display: flex;
@@ -730,6 +864,19 @@ a {
     background-repeat: no-repeat;
 }
 
+.overlay-login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* High-opacity black */
+    backdrop-filter: blur(10px); /* Increased blur effect */
+    display: none;
+    z-index: 1;
+}
+
+
 .overlay {
     height: 100%;
     width: calc(100% - 30px);
@@ -795,7 +942,7 @@ a {
     flex-direction: column;
     margin-bottom: 40px;
     height: 500px;
-    background-image: url("//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi0.wp.com%2Fwww.trenovision.com%2Fwp-content%2Fuploads%2F2019%2F10%2F553ada2b9135a3ccdfaaaf31346403dd.png%3Fresize%3D730%252C418%26ssl%3D1&f=1&nofb=1");
+    background-image: url('../assets/school_background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -941,6 +1088,7 @@ a {
     justify-content: center;
 }
 
+
 .watch-later-modal .side-buttons svg {
     width: 35px;
     min-width: 35px;
@@ -974,9 +1122,33 @@ a {
     .top p {
         font-size: 16px;
     }
+
+    .top-video p {
+        font-size: 20px;
+    }
+
+    .top-video h3 {
+        font-size: 15px;
+    }
+
+    .top-video h2 {
+        font-size: 15px;
+    }
 }
 
 @media screen and (max-width: 1430px) {
+    .top-video p {
+        font-size: 20px;
+    }
+
+    .top-video h3 {
+        font-size: 20px;
+    }
+
+    .top-video h2 {
+        font-size: 15px;
+    }
+
     .card h4 {
         font-size: 16px;
     }
@@ -1001,6 +1173,18 @@ a {
 }
 
 @media screen and (max-width: 1330px) {
+    .top-video p {
+        font-size: 18px;
+    }
+
+    .top-video h3 {
+        font-size: 18px;
+    }
+
+    .top-video h2 {
+        font-size: 13px;
+    }
+
     .top h1 {
         font-size: 60px;
     }
@@ -1026,6 +1210,18 @@ a {
 }
 
 @media screen and (max-width: 1230px) {
+    .top-video p {
+        font-size: 18px;
+    }
+
+    .top-video h3 {
+        font-size: 18px;
+    }
+
+    .top-video h2 {
+        font-size: 13px;
+    }
+
     .main-nav .button-container h2 {
         font-size: 18px;
     }
@@ -1059,6 +1255,18 @@ a {
 }
 
 @media screen and (max-width: 1180px) {
+    .top-video p {
+        font-size: 16px;
+    }
+
+    .top-video h3 {
+        font-size: 16px;
+    }
+
+    .top-video h2 {
+        font-size: 11px;
+    }
+
     .top .left-side {
         padding-left: 6%;
         width: 65%;
@@ -1089,6 +1297,18 @@ a {
 }
 
 @media screen and (max-width: 1045px) {
+    .top-video p {
+        font-size: 16px;
+    }
+
+    .top-video h3 {
+        font-size: 16px;
+    }
+
+    .top-video h2 {
+        font-size: 11px;
+    }
+
     .top h1 {
         font-size: 55px;
     }
@@ -1123,6 +1343,19 @@ a {
 }
 
 @media screen and (max-width: 950px) {
+    .top-video p {
+        font-size: 14px;
+    }
+
+    .top-video h3 {
+        font-size: 14px;
+    }
+
+    .top-video h2 {
+        font-size: 11px;
+    }
+
+
     .header .brand h1 {
         font-size: 30px;
     }

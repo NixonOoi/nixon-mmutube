@@ -3,7 +3,7 @@
   <head>
     <title>Streaming Service Landing Page</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Adding font awesome gives me a library of icons for me to choose from like the search bar icon - Nixon -->
@@ -26,25 +26,65 @@
                 <a onclick="SmoothScroll('search');" class="button-container search">
                     <i class="fas fa-search"></i>
                 </a>
-                <div class="button-container login">
-                    <h2>Log In</h2>
+                <div class="overlay-login" id="overlay-login"></div>
+                <div class="popup" id="popup">
+                    <div class="popup-header">
+                    <h2>Login</h2>
+                    <button id="closeBtn" class="close-btn">&times;</button>
                 </div>
+                    <form>
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <button type="submit">Login</button>
+                    </form>
+                    <div class="alternative-logins">
+                        <button id="appleLogin" class="apple-btn">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5 0C11.5 0 10.5 0.5 10 1.5C9.5 2.5 9.5 3.5 10.5 4.5C11.5 5.5 12.5 5.5 13.5 4.5C14.5 3.5 14.5 2.5 13.5 1.5C13 1 12.5 0.5 12.5 0ZM8 3C7 3 6 3.5 5.5 4.5C5 5.5 5 6.5 5.5 7.5C6 8.5 7 9 8 9C9 9 10 8.5 10.5 7.5C11 6.5 11 5.5 10.5 4.5C10 3.5 9 3 8 3ZM8 10C6 10 4 11 3 13C2 15 3 16 4 16C5 16 6 15 7 14C8 13 9 13 10 14C11 15 12 16 13 16C14 16 15 15 14 13C13 11 11 10 8 10Z"/>
+                            </svg>
+                            Login with Apple
+                        </button>
+                        <button id="googleLogin" class="google-btn">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 0C3.6 0 0 3.6 0 8C0 12.4 3.6 16 8 16C12.4 16 16 12.4 16 8C16 7.4 16 6.8 15.9 6.2H8V9.6H12.7C12.4 10.8 11.6 11.8 10.5 12.4V14.6H13.5C15.3 13.2 16 11.2 16 8.8C16 8.2 16 7.6 15.9 7H8V4H12.7C12.4 2.8 11.6 1.8 10.5 1.2V0H8Z"/>
+                            </svg>
+                            Login with Google
+                        </button>
+                    </div>
+                </div>
+                <button class="button-container login" id="openBtn">Open Login</button>
             </div>
         </div>
         <div class="top-video">
             <div class="top-video-content-area">
                 <div class="container-fluid ratio ratio-16x9">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ItjHMU8wFGw?si=uxfKtejXgIceGt9-" title="The Kelpie - Shapeshifting Horse from Scottish Mythology" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-                    </iframe>
-                </div>  
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/C7OQHIpDlvA?si=KXU_uzkzmPc0-CC7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                 </div>  
                 <div class="top-video-content-title">
-                    <p>Video Title</p>
-                    <p>Author: Video Author</p>
-                    <div class="comments">
-                        <h3>Comments</h3>
-                        <textarea placeholder="Add a comment..."></textarea>
+                    <div class="video-info">
+                        <h1><b>The Wait</b></h1>
+                        <p>Written, Directed & Edited : Nolt Vutthisak
+                            Starring : Kritthee Visitkitjakarn<br>
+                            Director of Photography : Ronapee Pensri<br>
+                            Music by : Kritthee Visitkitjakarn, Korn Mahadumrongkul<br>
+                            Mixed & Mastered by : Nolt Vutthisak</p>
                     </div>
-                </div>   
+                    <div class="buttons">
+                        <button id="likeBtn">👍 Like</button>
+                        <button id="dislikeBtn">👎 Dislike</button>
+                        <button id="shareBtn">🔗 Share</button>
+                    </div>
+                </div> 
+                <div class="comments">
+                    <h3>Comments</h3>
+                    <textarea placeholder="Add a comment..."></textarea>
+                </div>  
             </div>
             <div class="suggested-videos">
                 <p>Suggested Videos</p>
@@ -59,12 +99,16 @@
                     </li>
                     <li>
                         <img src="/assets/carousel_9.png" alt="The coffee machine">
-                        <h2>The coffee machin</h2>
+                        <h2>The coffee machine</h2>
+                    </li>
+                    <li>
+                        <img src="/assets/carousel_2.JPG" alt="The coffee machine">
+                        <h2>Mom</h2>
                     </li>
                 </ul>
             </div>    
         </div> 
-          
+        <div><hr></div>
         <div class="mid">
             <div class="content-area" id="action">
                 <h2 class="content-title">ACTION</h2>

@@ -1,8 +1,15 @@
+// Pop-up specifics - Nixon //
+document.getElementById('openBtn').addEventListener('click', function() {
+    document.getElementById('overlay-login').style.display = 'block';
+    document.getElementById('popup').style.display = 'block';
+});
+
+document.getElementById('closeBtn').addEventListener('click', function() {
+    document.getElementById('overlay-login').style.display = 'none';
+    document.getElementById('popup').style.display = 'none';
+});
+
 let num_cards_GLOBAL = 5;
-
-// video resources
-
-
 
 let cards = [
     {
@@ -513,14 +520,7 @@ const ScrollFunction = () => {
     }
 };
 
-const MakeJumbotron = () => {
-    let height =
-        window.innerHeight ||
-        document.documentElement.clientHeight ||
-        document.getElementsByTagName("body")[0].clientHeight;
 
-    document.getElementsByClassName("top")[0].style.height = `${height}px`;
-};
 
 let slide_index = 0;
 
