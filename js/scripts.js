@@ -1,13 +1,17 @@
 // Pop-up specifics - Nixon //
-document.getElementById('openBtn').addEventListener('click', function() {
-    document.getElementById('overlay-login').style.display = 'block';
-    document.getElementById('popup').style.display = 'block';
-});
+document.getElementById('loginBtn').onclick = function() {
+    document.getElementById('loginModal').style.display = "block";
+}
 
-document.getElementById('closeBtn').addEventListener('click', function() {
-    document.getElementById('overlay-login').style.display = 'none';
-    document.getElementById('popup').style.display = 'none';
-});
+document.getElementsByClassName('close')[0].onclick = function() {
+    document.getElementById('loginModal').style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == document.getElementById('loginModal')) {
+        document.getElementById('loginModal').style.display = "none";
+    }
+}
 
 let num_cards_GLOBAL = 5;
 

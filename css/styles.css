@@ -2,73 +2,98 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 /* Specifics for the login pop-up - Nixon */
-.popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    display: none;
-    z-index: 2;
-    width: 90%;
-    max-width: 400px;
-    box-sizing: border-box;
-}
 
-.popup-header {
+.title {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
 }
 
-
-button svg {
-    margin-right: 8px;
+button {
+    padding: 10px 20px;
+    font-size: 16px;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.8);
+    font-family: Lato;
+}
 
-.apple-btn {
+.modal-content {
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(51, 51, 51, 1);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input {
+    margin-bottom: 10px;
+}
+
+form button {
+    margin-top: 20px; /* Added padding between password input and login button */
+}
+
+.alternative-login {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.alternative-login button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 200px;
+}
+
+.apple-login {
     background-color: black;
     color: white;
 }
 
-.apple-btn:hover {
-    background-color: #333;
-    transform: scale(1.05);
-}
-
-.google-btn {
+.google-login {
     background-color: #4285F4;
     color: white;
 }
 
-.google-btn:hover {
-    background-color: #357ae8;
-    transform: scale(1.05);
-}
-
-.alternative-logins {
-    margin-top: 20px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-/* Responsive styles */
-@media (max-width: 600px) {
-    .popup {
-        width: 90%;
-        padding: 15px;
-    }
-
-    button {
-        padding: 8px;
-    }
-}
 
 body hr {
     border: none; /* Remove default border */
@@ -127,108 +152,128 @@ a {
 
 
 /* HEADER */
+
+/* */
 .header {
-    width: 100%;
-    position: fixed;
-    height: 70px;
-    background-color: transparent;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    z-index: 10;
-    transition: background-color 0.3s;
-}
-
-.header-change {
-    flex-direction: column;
-    justify-content: center;
-}
-
-.header-top {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.header-bottom {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-}
-
-.header-bottom .main-nav {
-    flex-direction: column;
-    margin-left: 0px;
-    margin-bottom: 20px;
-}
-
-.header-bottom .main-nav h3 {
-    margin-bottom: 10px;
-}
-
-.header-bottom .right-nav {
-    margin: 0 auto !important;
+    padding: 20px 45px 20px 45px;
+    background-color: transparent; /* Transparent by default */
+    color: white;
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
 .header:hover {
-    background-color: rgba(51, 51, 51, 1);
-    box-shadow: 0px 2px 10px black;
-    transition: background-color 0.3s;
-}
-
-.header-active {
-    background-color: rgba(51, 51, 51, 1);
-    box-shadow: 0px 2px 10px black;
-    transition: background-color 0.3s;
+    background-color: #333; /* Grey color on hover */
 }
 
 .header .brand {
-    margin-left: 25px;
     display: flex;
 }
 
-.header .brand h1 {
-    font-family: "Anton", sans-serif;
-    font-size: 35px;
-}
-
-.main-nav {
-    height: 100%;
+.nav {
     display: flex;
     align-items: center;
-    margin-left: 50px;
 }
 
-.main-nav .button-container {
-    height: calc(100% - 10px);
-    margin-top: 5px;
-    padding: 0px 15px;
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-family: "Lato";
+    font-weight: 700;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a.active {
+    background-color: #555; /* Highlight color for active link */
+    color: yellow; /* Text color for active link */
+    border-radius: 5px;
+}
+
+.nav-right {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-bottom: 5px solid transparent;
-    border-bottom-color: transparent;
-    transition: border-bottom-color 0.3s;
+    margin-left: 20px; /* Space between nav-links and nav-right */
+    padding-left: 20px; /* Space for the separator */
+    border-left: 1px solid white; /* Vertical bar separator */
 }
 
-.main-nav .button-container:hover {
+.search-icon, .login-btn {
+    font-family: "Lato";
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: transparent;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
     cursor: pointer;
-    border-bottom-color: var(--red);
-    transition: border-bottom-color 0.3s;
 }
 
-.main-nav .nav-link-active {
-    height: calc(100% - 10px);
-    margin-top: 5px;
-    padding: 0px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 5px solid red;
-    border-bottom-color: red;
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
 }
 
-.main-nav .button-container h2 {
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-links, .nav-right {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav.active .nav-links, .nav.active .nav-right {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-right {
+        flex-direction: column;
+        margin-top: 10px;
+        padding-left: 0; /* Remove padding for separator */
+        border-left: none; /* Remove separator for mobile */
+    }
+
+    .search-icon, .login-btn {
+        margin-left: 0;
+    }
+}
+/* */
+
+
+.nav h2 {
     font-family: "Lato";
     font-size: 18px;
     color: white;
@@ -250,14 +295,6 @@ a {
     border-radius: 8px;
 }
 
-.login {
-    background-color: var(--blue);
-}
-
-.login:hover {
-    background-color: var(--blue-selected);
-    cursor: pointer;
-}
 
 .search:hover {
     cursor: pointer;
@@ -371,9 +408,8 @@ button {
 
 .top-video{
     display: flex;
-    flex-wrap: wrap;
     background-color: #141414;
-    padding: 120px 40px 40px 40px;
+    padding: 50px 40px 40px 40px;
 }
 
 .top-video-content-area {
@@ -495,6 +531,7 @@ textarea {
 
 /* TOP SECTION */
 .top {
+    height: 700px;
     width: 100%;
     min-height: 250px;
     display: flex;
@@ -505,6 +542,18 @@ textarea {
     background-position: center;
 }
 /* Included a background-position:center to ensure hero image is centered even during resizing of screen size - Nixon */
+.top .image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: rgb(20, 20, 20);
+    background: linear-gradient(
+        0deg,
+        rgba(20, 20, 20, 1) 0%,
+        rgba(255, 255, 255, 0) 36%
+    );
+}
 
 
 @-webkit-keyframes fadeIn {
@@ -746,14 +795,6 @@ textarea {
     padding: 50px 0px;
 }
 
-.modal-content {
-    width: 100%;
-    max-width: 1000px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(51, 51, 51, 1);
-}
 
 .desc-image {
     width: 100%;
@@ -1040,6 +1081,7 @@ textarea {
     display: flex;
     justify-content: end;
     align-items: center;
+    margin-top: 20px;
 }
 
 .socials a svg {
@@ -1167,9 +1209,6 @@ textarea {
         margin-top: 10px;
     }
 
-    .modal-content {
-        max-width: 800px;
-    }
 }
 
 @media screen and (max-width: 1330px) {
@@ -1291,9 +1330,6 @@ textarea {
         min-width: 20px;
     }
 
-    .modal-content {
-        max-width: 700px;
-    }
 }
 
 @media screen and (max-width: 1045px) {
@@ -1377,9 +1413,6 @@ textarea {
         height: 100%;
     }
 
-    .modal-content {
-        max-width: 100%;
-    }
 }
 
 @media screen and (max-width: 815px) {
@@ -1517,6 +1550,33 @@ textarea {
 
     .mid {
         padding: 20px;
+    }
+}
+
+/* Apply flex-wrap at screen sizes less than or equal to 600px */
+@media (max-width: 600px) {
+    .top-video {
+        flex-wrap: wrap;
+    }
+
+    .suggested-videos {
+        margin-left: 0px;
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .suggested-videos h2 {
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .suggested-videos p {
+        margin-left: 10px;
+        margin-right: 40px;
+        margin-top: 40px;
+        font-size: 18px;
     }
 }
 
