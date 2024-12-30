@@ -28,12 +28,14 @@ button {
 }
 
 .modal-content {
-    margin: 15% auto;
+    margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 100%;
-    max-width: 300px;
-    height: auto;
+    min-width: 200px;
+    max-width: 600px;
+    min-height: 200px;
+    max-height: 600px;
     display: flex;
     flex-direction: column;
     background-color: rgba(51, 51, 51, 1);
@@ -369,17 +371,17 @@ a {
 
 #likeBtn {
     background-color: #4CAF50;
-    color: white;
+    color: #141414;
 }
 
 #dislikeBtn {
     background-color: #f44336;
-    color: white;
+    color: #141414;
 }
 
 #shareBtn {
     background-color: #008CBA;
-    color: white;
+    color: #141414;
 }
 
 button:hover {
@@ -635,9 +637,10 @@ textarea {
 }
 
 
-.top h3 {
+.top h2 {
     display: flex;
     align-items: center;
+    font-size: 18px;
 }
 
 .button-section {
@@ -1057,13 +1060,13 @@ textarea {
     justify-content: space-between;
 }
 
-.bottom .btn-row h4 {
+.bottom .btn-row h1 {
     color: white;
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
 }
 
-.bottom .btn-row h4:hover {
+.bottom .btn-row h1:hover {
     text-decoration: underline;
     cursor: pointer;
 }
